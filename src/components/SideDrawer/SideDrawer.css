@@ -1,0 +1,98 @@
+.SideDrawer {
+  position: absolute;
+  top: 0;
+  width: 31.3%;
+  height: 100%;
+  z-index: -1;
+  background: white;
+  transition: transform 0.25s ease-out;
+}
+
+.Close {
+  transform: translateX(-100%);
+  transition: all 0.25s;
+  z-index: -1;
+}
+
+.Open {
+  transform: translateX(0);
+  z-index: 100;
+}
+
+.BackButton {
+  position: relative;
+  top: 26.5px;
+  left: 26.5px;
+  margin: 0;
+  width: 34px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.BackButton div{
+  height: 2px;
+  width: 26px;
+  background-color: #707070;
+  position: relative;
+  top: 9px;
+}
+
+.BackButton div::before {
+  content: "";
+  height: 2px;
+  width: 15.5px;
+  background-color: #707070;
+  position: absolute;
+  transform: rotate(-45deg);
+  top: -6px;
+  left: -1px;
+}
+
+.BackButton div::after {
+  content: "";
+  height: 2px;
+  width: 15.5px;
+  background-color: #707070;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 6px;
+  left: -1px;
+}
+
+.Title {
+  font-size: 1.625rem;
+  font-family: 'Open Sans';
+  color: #5F88F9;
+  font-weight: 300;
+  position: relative;
+  top: -6px;
+  margin: 0;
+  left: 200px;
+}
+
+.TitleLine {
+  width: 333px;
+  border-top: 1px solid rgb(112, 112, 112, 0.6);
+}
+
+.List {
+  display: block;
+  position: relative;
+  left: 19%;
+  width: 124px;
+}
+
+.List li {
+  display: block;
+  margin: 40px 0;
+}
+
+.List li span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #707070;
+  position: relative;
+  top: -5px;
+  left: 26px;
+}

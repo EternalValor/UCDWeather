@@ -1,0 +1,47 @@
+.DrawerToggle {
+  position: relative;
+  top: 26.5px;
+  left: 26.5px;
+  margin: 0;
+  width: 34px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.DrawerToggle div{
+  height: 3px;
+  width: 34px;
+  background-color: white;
+  position: relative;
+  top: 9px;
+}
+
+.DrawerToggle div::before {
+  content: "";
+  height: 3px;
+  width: 34px;
+  background-color: white;
+  position: absolute;
+  top: -9px;
+}
+
+.DrawerToggle div::after {
+  content: "";
+  height: 3px;
+  width: 34px;
+  background-color: white;
+  position: absolute;
+  top: 9px;
+}
+
+.NotHome {
+  background-color: #707070 !important;
+}
+
+.NotHome::before {
+  background-color: #707070 !important;
+}
+
+.NotHome::after {
+  background-color: #707070 !important;
+}

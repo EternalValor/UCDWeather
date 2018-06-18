@@ -1,0 +1,32 @@
+.About {
+  width: 100%;
+  height: calc(100% - 75px);
+  background: white;
+}
+
+.Title {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  top: 63px;
+  left: 11.3%;
+  width: 185px;
+  border-bottom: 1px solid #5F88F9;
+  color: #5F88F9;
+}
+
+
+.Content { 
+  width: 623px;
+  height: 43%;
+  position: relative;
+  left: 11.3%;
+  top: 100px;
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  line-height: 2.2rem;
+  color: #707070;
+}

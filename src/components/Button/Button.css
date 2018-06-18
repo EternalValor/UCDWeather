@@ -1,0 +1,9 @@
+button {
+  font-size: 1.125rem;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

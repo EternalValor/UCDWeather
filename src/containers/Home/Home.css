@@ -1,0 +1,44 @@
+.Home {
+  width: 100%;
+  height: calc(100% - 75px);
+}
+
+.Header {
+  font-size: 2.625rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  position: relative;
+  top: 167px;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.625rem;
+  letter-spacing: 4px;
+  color: white;
+  margin-top: 0;
+  position: relative;
+  top: 167px;
+  text-align: center;
+}
+
+
+.ButtonContainer {
+  display: inline-block;
+  width: auto;
+  position: relative;
+  top: 282px;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 0;
+  
+}
+
+.ButtonContainer li {
+  margin-right: 124px;
+  margin-left: 0;
+}

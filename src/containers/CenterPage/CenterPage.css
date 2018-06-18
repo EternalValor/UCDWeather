@@ -1,0 +1,19 @@
+.CenterPage {
+  display: block;
+  width: 1440px;
+  height: 800px;
+  background: white;
+  background: url('../../assets/images/Homepage.jpeg') center center no-repeat;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  overflow: hidden;
+}
+
+@media (max-width: 1440px) {
+  .CenterPage {
+    width: 100%;
+    height: 100%;
+  }
+}

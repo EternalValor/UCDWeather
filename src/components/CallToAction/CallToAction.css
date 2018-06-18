@@ -1,0 +1,11 @@
+.Button {
+  width: 400px;
+  height: 75px;
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 75px;
+  color: white;
+  background: #5F88F9;
+}
