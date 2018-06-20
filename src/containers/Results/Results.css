@@ -1,8 +1,6 @@
 .Results {
   width: 100%;
   height: calc(100% - 75px);
-  background: white;
-  background: url('../../assets/images/Clouds.jpeg') center center no-repeat; 
   position: relative;
   overflow: scroll;
   font-family: 'Open Sans', sans-serif;
@@ -16,10 +14,6 @@
 .Results::-webkit-scrollbar-track{
   background: transparent;
 }
-
-/* .Results::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-} */
 
 .Results::-webkit-scrollbar-thumb {
 background-color: black;
@@ -93,4 +87,48 @@ outline: 1px solid slategrey;
   margin-top: 60px;
   margin-bottom: 20px;
   padding-bottom: 10.5px;
+}
+
+
+
+/* Backgrounds */
+
+.partly-cloudy-day {
+  background: url('../../assets/images/partly-cloudy-day.jpeg') center center no-repeat; 
+}
+
+.partly-cloudy-night {
+  background: url('../../assets/images/partly-cloudy-night.jpeg') center center no-repeat; 
+}
+
+.clear-day {
+  background: url('../../assets/images/clear-day.jpeg') center center no-repeat; 
+}
+
+.clear-night {
+  background: url('../../assets/images/clear-night.jpeg') center center no-repeat; 
+}
+
+.snow {
+  background: url('../../assets/images/snow.jpeg') center center no-repeat; 
+}
+
+.sleet {
+  background: url('../../assets/images/sleet.jpeg') center center no-repeat; 
+}
+
+.fog {
+  background: url('../../assets/images/fog.jpeg') center center no-repeat; 
+}
+
+.rain {
+  background: url('../../assets/images/rain.jpeg') center center no-repeat; 
+}
+
+.cloudy {
+  background: url('../../assets/images/cloudy.jpeg') center center no-repeat; 
+}
+
+.wind {
+  background: url('../../assets/images/wind.jpeg') center center no-repeat; 
 }

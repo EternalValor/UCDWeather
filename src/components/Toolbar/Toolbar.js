@@ -10,10 +10,6 @@ const toolbar = (props) => {
 
   let home;
 
-  const colors = {
-    blue: '#5F88F9'
-  }
-
   if(window.location.pathname !== '/'){
     home = false;
   } else {
@@ -50,13 +46,13 @@ const toolbar = (props) => {
           link='/about'
           exact
           name="ABOUT" 
-          color= {home ? 'white' : colors.blue} />
+          color= {props.color} />
        </li>
        <li>
         <Button 
           link='/'
           name="LOGIN" 
-          color= {home ? 'white' : colors.blue} />
+          color= {props.color} />
        </li>
      </ul>
      

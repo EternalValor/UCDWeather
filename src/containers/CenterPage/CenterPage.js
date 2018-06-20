@@ -52,11 +52,20 @@ class CenterPage extends Component {
   render() {
     return (
         <div className={classes.CenterPage}> 
+        <div style={{
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'white',
+          position: 'absolute',
+          zIndex: '-1',
+          display: this.props.shouldDisplay
+        }} ></div>
         <Toolbar 
           drawerToggleClicked={this.drawerToggleHandler} 
           updateName={this.updateNameHandler} 
           changed={this.onGeoLocationUpdateHandler}
-          history={this.props.history} />
+          history={this.props.history}
+          color={this.props.buttonColor} />
 
           <SideDrawer 
             closed={this.sideDrawerClosedHandler}

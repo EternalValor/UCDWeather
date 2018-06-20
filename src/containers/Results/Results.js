@@ -6,11 +6,24 @@ import Hour from '../../components/Hour/Hour';
 import Day from '../../components/Day/Day';
 import classes from './Results.css';
 import MainWeather from '../../components/MainWeather/MainWeather';
+import Spinner from '../../components/Spinner/Spinner';
 
 class Results extends Component {
   state = {
     weatherData: null,
-    windowWidth: 1440
+    windowWidth: 1440,
+    fillColors: {
+      snow: 'rgba(132, 132, 132, 0.6)',
+      sleet: 'rgba(132, 132, 132, 0.6)',
+      clearDay: 'rgba(142, 172, 255, 0.5)',
+      cloudy: 'rgba(149, 149, 149, 0.5)',
+      fog: 'rgba(149, 149, 149, 0.5)',
+      partlyCloudyDay: 'rgba(86, 146, 249, 0.6)',
+      partlyCloudyNight: 'rgba(255, 255, 255, 0.3)',
+      rain: 'rgba(94, 94, 94, 0.6)',
+      wind: 'rgba(98, 225, 119, 0.5)',
+      clearNight: 'rga(70, 70, 70, 0.5)'
+    }
   }
 
   componentWillMount() {
@@ -32,7 +45,7 @@ class Results extends Component {
     // console.log(this.state.weatherData);
     let renderBoi;
 
-    if(this.props.loading) renderBoi = <div className={classes.MainContainer} style={{padding: '15px'}} >loading</div>
+    if(this.props.loading) renderBoi = <div className={classes.MainContainer} style={{padding: '15px'}} ><Spinner /></div>
 
     let hourlyCount = 11;
     let dailyCount = 5;
@@ -74,7 +87,7 @@ class Results extends Component {
                                 summary={hour.summary}
                                 precip={(hour.precipProbability * 100).toFixed()}
                                 wind={hour.windSpeed.toFixed()}
-                                time={moment.unix(hour.time).format('h a')} />;
+                                time={moment.unix(hour.time + this.state.weatherData.offset * 3600).format('h a')} />;
                 })}
                </Slider>
                <div className={classes.Daily}>Daily</div>
@@ -83,7 +96,7 @@ class Results extends Component {
                     if(index >= 7) return null;
                     else return <Day
                                   key={index}
-                                  date={moment.unix(day.time).format('ddd D')}
+                                  date={moment.unix(day.time + this.state.weatherData.offset * 3600).format('ddd D')}
                                   icon={day.icon}
                                   summary={day.summary}
                                   low={day.temperatureLow.toFixed()}
@@ -101,11 +114,35 @@ class Results extends Component {
         
       }
     }
-    
+
+    const resultClass = [classes.Results];
+    if(this.state.weatherData !== null) {
+      resultClass.push(classes[this.state.weatherData.currently.icon]);
+    }
+    let fillColor = this.state.fillColors.clearDay;
+    if(this.state.weatherData !== null) {
+      switch (this.state.weatherData.currently.icon) {
+        case 'clear-night':
+          fillColor = this.state.fillColors.clearNight;
+          break;
+        case 'clear-day':
+          fillColor = this.state.fillColors.clearDay;
+          break;
+        case 'partly-cloudy-night':
+          fillColor = this.state.fillColors.partlyCloudyNight;
+          break;
+        case 'partly-cloudy-day':
+          fillColor = this.state.fillColors.partlyCloudyDay;
+          break;
+        default:
+          fillColor = this.state.fillColors[this.state.weatherData.currently.icon];
+          break;
+      }
+    }
 
     return (
-      <div className={classes.Results} >
-        <div className={classes.Fill} style={{background: 'rgba(86, 146, 249, 0.6)'}}></div>
+      <div className={resultClass.join(' ')} >
+        <div className={classes.Fill} style={{background: fillColor}}></div>
         {renderBoi}
       </div>
     )
