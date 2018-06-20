@@ -1,0 +1,36 @@
+
+
+.Temp {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
+}
+
+.Summary {
+  font-size: 1rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.Precip {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 7px;
+}
+
+.Wind {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 12.5px;
+  margin-bottom: 10.5px;
+}
+
+.Time {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}

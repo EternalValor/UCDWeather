@@ -1,0 +1,42 @@
+.Marker {
+  width: 125px;
+  height: auto;
+  background: #DDDDDD;
+  border: 1px solid black;
+  border-radius: 5px;
+  transform: translate(-50%, -100%);
+  text-align: center;
+}
+
+.Title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 4px;
+}
+
+.Mid {
+  display: flex;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.Temp {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  flex-basis: 50%;
+}
+
+.Icon {
+  flex-basis: 50%;
+  padding-top: 4.5px;
+  box-sizing: border-box;
+}
+
+.Bottom {
+  margin: 5px auto;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.75rem;
+}

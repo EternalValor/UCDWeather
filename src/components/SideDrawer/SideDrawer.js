@@ -31,14 +31,21 @@ const sideDrawer = (props) => {
                 height="24" />
                 <span>Login</span>
             </li>
-            <li>
-            <Icon 
-                name="map-marker"
-                color="#707070"
-                width="24"
-                height="24" />
-                <span>Maps</span>
-            </li>
+
+            <NavLink 
+              to="/maps"
+              exact
+              style={{color: 'transparent'}} >
+                <li onClick={props.closed}>
+                <Icon 
+                    name="map-marker"
+                    color="#707070"
+                    width="24"
+                    height="24" />
+                    <span>Maps</span>
+                </li>
+            </NavLink>
+
             <li>
             <Icon 
                 name="heart"

@@ -1,0 +1,96 @@
+
+/* 
+  TODO: MainWeather 
+*/
+
+
+
+.Title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin: 0;
+  text-align: center;
+}
+
+.MainFlex {
+  display: flex;
+  text-align: center;
+  margin-top: 3px;
+}
+
+.LeftFlex {
+  flex-basis: calc(47% - 27px);
+  padding-right: 27px;
+  box-sizing: border-box;
+}
+
+.RightFlex {
+  flex-basis: 53%;
+}
+
+.MainTemp {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 6.25rem;
+  letter-spacing: -2px;
+  text-align: left;
+  line-height: 6.5rem;
+}
+
+.HighLow {
+  display: flex;
+}
+
+.LowTemp {
+  display: inline-block;
+  flex-basis: 50%;
+  text-align: left;
+  padding-left: 7px;
+  box-sizing: border-box;
+}
+
+.HighTemp {
+  display: inline-block;
+  flex-basis: 50%;
+  padding-right: 7px;
+  box-sizing: border-box;
+}
+
+.Details {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: 300;
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+.MainDetails {
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.MainDetails div{
+  display: flex;
+}
+
+.MainDetailsLeft {
+  display: inline-block;
+  flex-basis: 70.5%;
+}
+
+.MainDetailsRight {
+  display: inline-block;
+  flex-basis: 29.5%;
+}
+
+
+.Condition {
+  font-family: 'Open Sans';
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 12px 0;
+}

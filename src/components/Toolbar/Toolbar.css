@@ -22,6 +22,7 @@
   transform: translateY(-50%);
   left: 86px;
   color: white;
+  z-index: 5;
 }
 
 
@@ -66,7 +67,8 @@ ul li {
 }
 
 .SearchIcon {
-  position: relative;
+  position: absolute;
   left: 355px;
-  z-index: 1;
+  top: 20px;;
+  z-index: 3;
 }

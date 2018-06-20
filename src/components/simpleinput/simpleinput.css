@@ -1,0 +1,57 @@
+input {
+  display: inline-block;
+  font-family: 'Open Sans';
+  width: 385px;
+  height: 36px;
+  padding-left: 56px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #707070;
+  color: #707070;
+  font-size: 1rem;
+  border-radius: 13px;
+  position: relative;
+  top: -5px;
+  left: 347px;
+  outline: none;
+  transition: all 0.1s ease-in;
+  z-index: 2;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #606060;
+  color: #606060;
+}
+
+input + div {
+  position: relative;
+  left: 347px;
+  margin-top: -5px !important;
+  border-radius: 7px !important;
+  font-family: 'Open Sans', sans-serif !important;
+  -webkit-box-shadow: 2px 3px 9px 0px rgba(112,112,112,0.75) !important;
+  -moz-box-shadow: 2px 3px 9px 0px rgba(112,112,112,0.75) !important;
+  box-shadow: 2px 3px 9px 0px rgba(112,112,112,0.75) !important;
+  z-index: 10;
+}
+
+input + div div {
+  color: #707070;
+  padding: 6px 8px !important;
+}
+
+input + div div:hover {
+  background: #ddd !important;
+  color: #606060; 
+  border-radius: 7px;
+}
+
+
+table {
+  display: none;
+}
+
+.geo {
+  background: blue;
+  color: red;
+}

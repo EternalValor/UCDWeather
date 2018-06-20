@@ -2,4 +2,95 @@
   width: 100%;
   height: calc(100% - 75px);
   background: white;
+  background: url('../../assets/images/Clouds.jpeg') center center no-repeat; 
+  position: relative;
+  overflow: scroll;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Results::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+.Results::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+/* .Results::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+} */
+
+.Results::-webkit-scrollbar-thumb {
+background-color: black;
+outline: 1px solid slategrey;
+}
+
+.Results::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.Fill {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+
+.MainContainer { 
+  position: relative;
+  z-index: 5;
+}
+
+.MainWeather {
+  width: 382px;
+  color: white;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.Hourly {
+  font-size: 1.5rem;
+  color: white;
+  width: 84%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-bottom: 10.5px;
+}
+
+.HourlySlider {
+  margin: 0 auto;
+  width: 84%;
+}
+
+.DailySlider {
+  margin: 0 auto;
+  width: 84%;
+  margin-bottom: 60px;
+}
+
+/* .Slider div{
+  width: 200px;
+} */
+
+.Hour {
+  display: inline-block;
+  width: 112px;
+  height: 187px;
+}
+
+.Daily {
+  font-size: 1.5rem;
+  color: white;
+  width: 84%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-bottom: 10.5px;
 }

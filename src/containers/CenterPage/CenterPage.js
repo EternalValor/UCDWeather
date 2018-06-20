@@ -8,7 +8,8 @@ class CenterPage extends Component {
 
   state = {
     showSideDrawer: false,
-    name: 'nothing'
+    name: 'nothing',
+    geoData: {}
   }
 
   sideDrawerClosedHandler = () => {
@@ -32,18 +33,30 @@ class CenterPage extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    this.props.updateSearch(nextState.name);
-    return true;
+  onGeoLocationUpdateHandler = (data) => {
+    this.setState({geoData: data});
   }
+
+  componentWillUpdate(nextProps, nextState) {
+    if(nextState.geoData !== this.state.geoData){
+      this.props.updateGeo(nextState.geoData);
+    }
+  }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   this.props.updateSearch(nextState.name);
+  //   return true;
+  // }
 
 
   render() {
-    
     return (
         <div className={classes.CenterPage}> 
-        <Toolbar drawerToggleClicked={this.drawerToggleHandler} 
-          updateName={this.updateNameHandler} changed={event => this.inputChangedHandler(event)} />
+        <Toolbar 
+          drawerToggleClicked={this.drawerToggleHandler} 
+          updateName={this.updateNameHandler} 
+          changed={this.onGeoLocationUpdateHandler}
+          history={this.props.history} />
 
           <SideDrawer 
             closed={this.sideDrawerClosedHandler}

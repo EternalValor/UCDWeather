@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import Icon from '../Icon/Icon';
 import {NavLink} from 'react-router-dom';
+import Input from '../../components/simpleinput/simpleinput';
 
 const toolbar = (props) => {
 
@@ -35,7 +36,8 @@ const toolbar = (props) => {
       exact>
      <span style={{color: home ? 'white' : '#707070'}} className={classes.Logo}>UCD Weather</span>
     </NavLink>
-     <input className={classes.Searchbar} type="text" name="search" placeholder="Search" onKeyPress={props.changed} />
+     {/* <input className={classes.Searchbar} type="text" name="search" placeholder="Search" onKeyPress={props.changed} /> */}
+     <Input history={props.history} changed={props.changed} />
      <Icon 
       name="magnify"
       color="#707070"

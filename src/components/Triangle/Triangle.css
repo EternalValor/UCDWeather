@@ -1,0 +1,36 @@
+.Triangle {
+  display: inline-block;
+  width: 20px;
+  height: 12.5px;
+}
+
+.Triangle div {
+  width: 20px;
+  height: 1px;
+  background: white;
+  position: relative;
+  top: 10px;
+}
+
+.Triangle div::before {
+  content: '';
+  width: 14.5px;
+  height: 1px;
+  background: white;
+  position: absolute;
+  top: -5.25px;
+  left: 8px;
+  transform: rotate(45deg);
+}
+
+.Triangle div::after {
+  content: '';
+  width: 14.5px;
+  height: 1px;
+  background: white;
+  position: absolute;
+  top: -5.25px;
+  right: 8px;
+  transform: rotate(-45deg);
+    
+}

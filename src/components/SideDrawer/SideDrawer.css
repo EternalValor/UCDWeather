@@ -1,7 +1,7 @@
 .SideDrawer {
   position: absolute;
   top: 0;
-  width: 31.3%;
+  width: 450px;
   height: 100%;
   z-index: -1;
   background: white;
