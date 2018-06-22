@@ -1,0 +1,65 @@
+.Favorite {
+  width: 450px;
+  height: 200px;
+  background: rgba(86, 146, 249, 0.6);
+  display: flex;
+  font-weight: 300;
+  position: relative;
+  margin: 75px 0;
+  
+}
+
+.Left {
+  flex-basis: 50%;
+  text-align: center
+}
+
+.Right {
+  flex-basis: 50%;
+}
+
+.Temp {
+  font-size: 2.75rem;
+  margin-top: 15px;
+}
+
+.Summary {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.BottomLeft {
+  display: flex;
+  font-size: 0.75rem;
+}
+
+.Humidity {
+  flex-basis: 50%;
+}
+
+.Wind {
+  flex-basis: 50%;
+  border-left: 1px solid black;
+}
+
+.City {
+  margin-top: 20px;
+  font-size: 1.625rem;
+  text-align: center;
+}
+
+.Time {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.75rem;
+}
+
+.Delete{
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 1.2rem;
+  transform: scaleX(1.05);
+  cursor: pointer;
+}

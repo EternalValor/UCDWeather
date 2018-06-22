@@ -5,6 +5,7 @@ import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import Icon from '../Icon/Icon';
 import {NavLink} from 'react-router-dom';
 import Input from '../../components/simpleinput/simpleinput';
+import fire from '../../config/Fire';
 
 const toolbar = (props) => {
 
@@ -22,6 +23,10 @@ const toolbar = (props) => {
     currentClass = classes.WhiteToolbar;
   } else {
     currentClass = classes.Toolbar;
+  }
+
+  const logoutHandler = () => {
+    fire.auth().signOut();
   }
 
   return (
@@ -48,12 +53,27 @@ const toolbar = (props) => {
           name="ABOUT" 
           color= {props.color} />
        </li>
-       <li>
-        <Button 
-          link='/'
-          name="LOGIN" 
-          color= {props.color} />
-       </li>
+
+        {
+          props.user ?
+            (
+              <li>
+                <Button 
+                  name="LOGOUT" 
+                  color= {props.color}
+                  clicked={logoutHandler} />
+              </li>
+            ) :
+            (
+              <li>
+                <Button 
+                  name="LOGIN" 
+                  color= {props.color}
+                  clicked={props.loginToggleClicked} />
+              </li>
+            )
+        }
+        
      </ul>
      
     </div>

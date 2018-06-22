@@ -20,12 +20,12 @@ background-color: black;
 outline: 1px solid slategrey;
 }
 
-.Results::after {
+/* .Results::after {
   content: '';
   width: 100px;
   height: 100px;
   background-color: blue;
-}
+} */
 
 .Fill {
   width: 100%;
@@ -87,6 +87,13 @@ outline: 1px solid slategrey;
   margin-top: 60px;
   margin-bottom: 20px;
   padding-bottom: 10.5px;
+}
+
+.Favorite {
+  position: absolute;
+  left: calc(50% + 200px);
+  top: 15px;
+  cursor: pointer;
 }
 
 

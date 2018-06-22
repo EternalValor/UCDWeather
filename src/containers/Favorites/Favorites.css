@@ -1,0 +1,42 @@
+.Favorites {
+  width: 100%;
+  height: calc(100% - 75px);
+  position: relative;
+  overflow: scroll;
+  padding: 0 10%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Favorites::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+.Favorites::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+.Favorites::-webkit-scrollbar-thumb {
+background-color: black;
+outline: 1px solid slategrey;
+}
+
+.Title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 64px;
+}
+
+.Line {
+  border: 1px solid black;
+  width: 295px;
+}
+
+.Favs {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+}

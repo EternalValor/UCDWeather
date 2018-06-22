@@ -210,6 +210,19 @@ const icon = (props) => {
           </svg>
 
         );
+      case 'key':
+        return (
+          <svg style={{width: props.width, height: props.height}} viewBox="0 0 24 24">
+            <path fill={props.color} d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7,6A6,6 0 0,0 1,12A6,6 0 0,0 7,18C9.61,18 11.83,16.33 12.65,14H17V18H21V14H23V10H12.65Z" />
+          </svg>
+        );
+
+      case 'logout':
+        return (
+          <svg style={{width: props.width, height: props.height}} viewBox="0 0 24 24">
+            <path fill={props.color} d="M17,17.25V14H10V10H17V6.75L22.25,12L17,17.25M13,2A2,2 0 0,1 15,4V8H13V4H4V20H13V16H15V20A2,2 0 0,1 13,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2H13Z" />
+          </svg>
+        )
  
       
     default:

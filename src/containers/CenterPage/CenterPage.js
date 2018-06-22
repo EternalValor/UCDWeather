@@ -3,11 +3,13 @@ import classes from './CenterPage.css';
 import Toolbar from '../../components/Toolbar/Toolbar';
 import SideDrawer from '../../components/SideDrawer/SideDrawer';
 import Auxx from '../../hoc/Auxx/Auxx';
+import LoginModal from '../../components/LoginModal/LoginModal';
 
 class CenterPage extends Component {
 
   state = {
     showSideDrawer: false,
+    showLoginModal: false,
     name: 'nothing',
     geoData: {}
   }
@@ -21,6 +23,18 @@ class CenterPage extends Component {
       return {showSideDrawer: !prevState.showSideDrawer};
     });
   }
+
+  loginModalClosedHandler = () => {
+    this.setState({showLoginModal: false});
+  }
+
+  loginModalToggleHandler = () => {
+    this.setState((prevState) => {
+      return {showLoginModal: !prevState.showLoginModal};
+    }) 
+  }
+
+  
 
 
   inputChangedHandler = (event) => {
@@ -62,14 +76,24 @@ class CenterPage extends Component {
         }} ></div>
         <Toolbar 
           drawerToggleClicked={this.drawerToggleHandler} 
+          loginToggleClicked={this.loginModalToggleHandler}
           updateName={this.updateNameHandler} 
           changed={this.onGeoLocationUpdateHandler}
           history={this.props.history}
-          color={this.props.buttonColor} />
+          color={this.props.buttonColor}
+          user={this.props.user} />
 
           <SideDrawer 
+            loginToggleClicked={this.loginModalToggleHandler}
+            loginModalClosed={this.loginModalClosedHandler}
             closed={this.sideDrawerClosedHandler}
-            open={this.state.showSideDrawer} />
+            open={this.state.showSideDrawer}
+            user={this.props.user} />
+
+          <LoginModal
+            user={this.props.user}
+            closed={this.loginModalClosedHandler}
+            open={this.state.showLoginModal} />
           <Auxx>
             {this.props.children} 
           </Auxx>

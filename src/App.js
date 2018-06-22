@@ -7,7 +7,9 @@ import Home from './containers/Home/Home';
 import About from './containers/About/About';
 import Results from './containers/Results/Results';
 import Maps from './containers/Maps/Maps';
+import Favorites from './containers/Favorites/Favorites';
 import classes from './App.css';
+import fire from './config/Fire';
 
 class App extends Component {
 
@@ -50,7 +52,24 @@ class App extends Component {
         time: 0
       }
     },
-    loading: true
+    loading: true,
+    user: {},
+    database: fire.database()
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      console.log("[USER], ", user);
+      if(user) {
+        this.setState({user: user});
+      } else {
+        this.setState({user: null});
+      }
+    })
   }
 
 
@@ -138,7 +157,9 @@ class App extends Component {
     }
     console.log("[App GeoData]", this.state.geoData);
     console.log("[APP WEATHER DATA]", this.state.weatherData);
-    
+
+
+
 
     return (
       <Backdrop color={backColor} >
@@ -147,8 +168,13 @@ class App extends Component {
           history={this.state.historyData.history} 
           updateGeo={this.updateGeoDataHandler}
           shouldDisplay={shouldDisplay}
-          buttonColor={buttonColor} >
+          buttonColor={buttonColor}
+          user={this.state.user} >
           <Switch>
+            <Route 
+                path="/favorites" 
+                render={(props) => <Favorites {...props}  updatePage={this.updatePageHandler}
+                user={this.state.user} />} />
             <Route 
                 path="/maps" 
                 render={(props) => <Maps {...props}  updatePage={this.updatePageHandler}
@@ -161,7 +187,9 @@ class App extends Component {
               weatherData={this.state.weatherData} 
               loading={this.state.loading} 
               stop={this.stopLoadingHandler}
-              title={`${this.state.geoData.city}, ${this.state.geoData.country}`} />} />
+              title={`${this.state.geoData.city}, ${this.state.geoData.country}`}
+              user={this.state.user}
+              geoData={this.state.geoData} />} />
             <Route 
               path="/about" 
               render={(props) => <About {...props}  updatePage={this.updatePageHandler} />} />
