@@ -8,4 +8,30 @@
   line-height: 75px;
   color: white;
   background: #5F88F9;
+  cursor: pointer;
+}
+
+
+@media (max-width: 950px) {
+
+  .Button {
+    margin: 0 auto;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .Button {
+    width: 300px;
+  }
+
+}
+
+@media (max-height: 770px) {
+  
+  .Button {
+    margin-bottom: 45px;
+  }
 }

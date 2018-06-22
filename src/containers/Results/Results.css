@@ -20,12 +20,6 @@ background-color: black;
 outline: 1px solid slategrey;
 }
 
-/* .Results::after {
-  content: '';
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-} */
 
 .Fill {
   width: 100%;
@@ -138,4 +132,20 @@ outline: 1px solid slategrey;
 
 .wind {
   background: url('../../assets/images/wind.jpeg') center center no-repeat; 
+}
+
+
+
+@media (max-width: 600px) {
+
+  .MainWeather {
+    width: 300px;
+  }
+
+  .Favorite {
+    top: 7px;
+    left: calc(50% + 140px);
+  }
+  
+
 }

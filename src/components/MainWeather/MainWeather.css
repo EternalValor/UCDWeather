@@ -94,3 +94,34 @@
   text-align: center;
   margin: 12px 0;
 }
+
+@media (max-width: 600px) {
+  .Title {
+    font-size: 1.4rem;
+  }
+
+  .MainTemp {
+    font-size: 4.5rem;
+  }
+
+  .HighTemp {
+    font-size: 0.75rem;
+  }
+
+  .LowTemp {
+    font-size: 0.75rem;
+  }
+
+  .Details {
+    font-size: 1.2rem;
+  }
+  
+  .MainDetails {
+    font-size: 0.9rem;
+  }
+
+  .Condition {
+    font-size: 1.1rem;
+    margin: 8px 0;
+  }
+}

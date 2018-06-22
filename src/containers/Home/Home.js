@@ -13,6 +13,22 @@ class Home extends Component {
     this.props.updatePage(this.props.location.pathname, this.props);
   }
 
+  clickedHandler = () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+     
+      const geodata = {
+        city: 'Home',
+        country: '',
+        location: {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        }
+      }
+      this.props.updateGeo(geodata);
+      this.props.history.push('/results');
+    });
+  }
+
   render() {
     
     return (
@@ -20,7 +36,9 @@ class Home extends Component {
         <h1 className={classes.Header} >Welcome to UCD Weather</h1>
         <h2>Authentic Weather Reports</h2>
         <ul className={classes.ButtonContainer} >
-          <li><CallToAction name="Use Your Location" /></li>
+          <li><CallToAction 
+                  name="Use Your Location" 
+                  clicked={this.clickedHandler}/></li>
 
           <NavLink 
             to="/maps"

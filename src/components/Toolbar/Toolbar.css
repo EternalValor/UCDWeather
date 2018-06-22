@@ -72,3 +72,48 @@ ul li {
   top: 20px;;
   z-index: 3;
 }
+
+
+@media (max-width: 1150px) {
+  ul {
+    right: 35px;
+  }
+
+  ul li:nth-child(1) {
+    display: none;
+  }
+
+  
+}
+
+
+
+@media (max-width: 950px) {
+
+  .SearchIcon {
+    left: 298px;
+  }
+
+}
+
+
+@media (max-width: 775px) {
+
+  .Logo {
+    display: none;
+  }
+
+  .SearchIcon {
+    left: 98px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  
+  ul li:nth-child(2) {
+    display: none;
+  }
+
+  
+}

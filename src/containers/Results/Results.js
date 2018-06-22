@@ -45,7 +45,7 @@ class Results extends Component {
       } else if (favIcon.getAttribute('fill') === 'white' && nextState.faved) {
         this.setState({ faved: false });
       }
-      // console.log("[GETTTIIING COOLOR]", favIcon.getAttribute('fill'));
+      
     }
   }
 
@@ -62,7 +62,7 @@ class Results extends Component {
           } else if (favIcon.getAttribute('fill') === 'white') {
             this.setState({ faved: false });
           }
-          // console.log("[GETTTIIING COOLOR]", favIcon.getAttribute('fill'));
+          
         }
       }
     }
@@ -71,7 +71,7 @@ class Results extends Component {
 
   addFavHandler = () => {
     if(this.state.faved){
-      // console.log("clicked");
+      
       this.state.database.ref(`users/${this.props.user.uid}/favorites/${this.props.geoData.city}${this.props.geoData.country}${this.props.geoData.location.lat.toFixed()}${this.props.geoData.location.lng.toFixed()}`).remove();
       this.setState((prevState) => {
         return { faved: !prevState.faved }
@@ -104,21 +104,20 @@ class Results extends Component {
 
   render() {
 
-    // console.log("[Result WeatherData]", this.state.weatherData);
+    
     let favorites = this.state.favorites;
-    // console.log("[RESULT GEODATA]", this.props.geoData);
+    
 
     if (this.props.user) {
       if (this.props.user.uid) {
         this.state.database.ref('users/' + this.props.user.uid + '/favorites').on('value', snap => {
           favorites = snap.val();
-          // console.log(snap.val());
+          
         });
       }
     }
 
-    // console.log("[RESULTS FAVORITES]", favorites);
-    // console.log(this.state.weatherData);
+    
     let renderBoi;
 
     if (this.props.loading) renderBoi = <div className={classes.MainContainer} style={{ padding: '15px' }} ><Spinner /></div>
@@ -127,10 +126,10 @@ class Results extends Component {
     let dailyCount = 5;
 
     if (window.innerWidth < 1440) {
-      // console.log(window.innerWidth);
+      
       hourlyCount = Math.ceil((0.84 * window.innerWidth) / 112);
       dailyCount = ((0.84 * window.innerWidth) / 251).toFixed();
-      // console.log("hourlyCount " + Math.ceil(hourlyCount));
+      
     }
 
     if (this.state.weatherData) {
@@ -187,7 +186,7 @@ class Results extends Component {
               })}
             </Slider>
             <div className={classes.Daily}>Daily</div>
-            <Slider className={classes.DailySlider} slidesToShow={dailyCount} infinite={false}>
+            <Slider className={classes.DailySlider} slidesToShow={dailyCount} centerMode={dailyCount === 1 ? true : false} infinite={false}>
               {this.state.weatherData.daily.data.map((day, index) => {
                 if (index >= 7) return null;
                 else return <Day

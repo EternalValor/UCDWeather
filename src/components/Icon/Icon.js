@@ -222,7 +222,14 @@ const icon = (props) => {
           <svg style={{width: props.width, height: props.height}} viewBox="0 0 24 24">
             <path fill={props.color} d="M17,17.25V14H10V10H17V6.75L22.25,12L17,17.25M13,2A2,2 0 0,1 15,4V8H13V4H4V20H13V16H15V20A2,2 0 0,1 13,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2H13Z" />
           </svg>
-        )
+        );
+      
+      case 'home':
+        return (
+          <svg style={{width: props.width, height: props.height}} viewBox="0 0 24 24">
+            <path fill={props.color} d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+          </svg>
+        );
  
       
     default:

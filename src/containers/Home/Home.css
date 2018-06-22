@@ -1,6 +1,21 @@
 .Home {
   width: 100%;
   height: calc(100% - 75px);
+  overflow: scroll;
+}
+
+.Home::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+.Home::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+.Home::-webkit-scrollbar-thumb {
+background-color: #707070;
+outline: 1px solid slategrey;
 }
 
 .Header {
@@ -41,4 +56,40 @@ h2 {
 .ButtonContainer li {
   margin-right: 124px;
   margin-left: 0;
+}
+
+
+@media (max-width: 1150px) {
+
+  .ButtonContainer li{
+    display: inline-block !important;
+  }
+
+}
+
+
+@media (max-width: 950px) {
+
+  .ButtonContainer li{
+    display: block;
+    width: 100%;
+    margin: 25px auto;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .Header {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  .ButtonContainer {
+    top: 182px;
+  }
+
 }

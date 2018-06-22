@@ -63,7 +63,6 @@ class App extends Component {
 
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
-      console.log("[USER], ", user);
       if(user) {
         this.setState({user: user});
       } else {
@@ -74,7 +73,6 @@ class App extends Component {
 
 
     getWeatherData = () => {
-      console.log("starting fetch.");
       fetch("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/705db75b1f2da0d706739510f0b5ef12/" + this.state.geoData.location.lat 
         + "," + this.state.geoData.location.lng + "?units=si&exclude=minutely,alerts,flags")
         .then(response => response.json())
@@ -82,7 +80,6 @@ class App extends Component {
           if(!this.state.loading) this.setState({loading: true});
           if(this.state.weatherData.currently.time !== data.currently.time) this.setState({weatherData: data});
         });
-        console.log("finished fetch");
     }
 
     updateGeoDataHandler = (newData) => {
@@ -138,10 +135,12 @@ class App extends Component {
             default:
               backColor = this.state.backColors[this.state.weatherData.currently.icon];
               buttonColor = this.state.buttonColors[this.state.weatherData.currently.icon];
-              console.log(backColor);
               break;
           }
         }
+        break;
+      case '/favorites':
+        backColor = this.state.backColors.about;
         break;
       default:
         backColor = this.state.backColors.home;
@@ -155,8 +154,7 @@ class App extends Component {
     if(this.state.oldGeoData !== this.state.geoData) {
       this.getWeatherData();
     }
-    console.log("[App GeoData]", this.state.geoData);
-    console.log("[APP WEATHER DATA]", this.state.weatherData);
+    
 
 
 
@@ -174,7 +172,8 @@ class App extends Component {
             <Route 
                 path="/favorites" 
                 render={(props) => <Favorites {...props}  updatePage={this.updatePageHandler}
-                user={this.state.user} />} />
+                user={this.state.user}
+                updateGeo={this.updateGeoDataHandler} />} />
             <Route 
                 path="/maps" 
                 render={(props) => <Maps {...props}  updatePage={this.updatePageHandler}
@@ -195,7 +194,8 @@ class App extends Component {
               render={(props) => <About {...props}  updatePage={this.updatePageHandler} />} />
             <Route 
               path="/" 
-              render={(props) => <Home {...props}  updatePage={this.updatePageHandler}  />} />
+              render={(props) => <Home {...props}  updatePage={this.updatePageHandler}
+              updateGeo={this.updateGeoDataHandler}  />} />
           </Switch>
         </CenterPage>
       </Backdrop>

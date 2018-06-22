@@ -141,3 +141,44 @@
   text-align: center;
   color: red;
 }
+
+
+@media ( max-width: 650px ) {
+  .LoginModal {
+    width: 90%;
+    height: 50%px;
+  }
+  
+  
+  .Username {
+    width: 90%;
+    font-size: 1.125rem;
+  }
+  
+  .UsernameIcon {
+    position: absolute;
+    z-index: 201;
+    top: 55.5px;
+    left: 25px;
+  }
+  
+  .Password {
+    width: 90%;
+    font-size: 1.125rem;
+  }
+  
+  .PasswordIcon {
+    position: absolute;
+    z-index: 201;
+    top: 139.5px;
+    left: 25px;
+  }
+  
+  .LoginButton {
+    width: 90%;
+  }
+  
+  .ErrorMessage {
+    width: 90%;
+  }
+}

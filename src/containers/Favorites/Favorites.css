@@ -40,3 +40,19 @@ outline: 1px solid slategrey;
   align-content: center;
   flex-wrap: wrap;
 }
+
+
+@media (max-width: 600px) {
+  .Title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 64px;
+  }
+
+  .Line {
+    border: 1px solid black;
+    width: 65%;
+  }
+  
+}

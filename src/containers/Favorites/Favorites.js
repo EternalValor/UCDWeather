@@ -18,9 +18,13 @@ class Favorites extends React.Component {
   componentDidMount() {
     this.props.updatePage(this.props.location.pathname, this.props);
     this.state.database.ref('users/' + this.props.user.uid + '/favorites').on('value', snap => {
-      console.log("[FAVORITES MOUNTED FAVES]", snap.val());
       this.setState({favorites: snap.val()});
     });
+  }
+
+  favClickHandler = (fave) => {
+    this.props.updateGeo(fave);
+    this.props.history.push('/results');
   }
 
 
@@ -35,7 +39,6 @@ class Favorites extends React.Component {
       if (this.props.user.uid) {
         this.state.database.ref('users/' + this.props.user.uid + '/favorites').on('value', snap => {
           favorites = snap.val();
-          console.log(snap.val());
         });
       }
     }
@@ -52,8 +55,8 @@ class Favorites extends React.Component {
           <Auxx> 
             {
               Object.keys(favorites).map((fave, index) => {
-                console.log(favorites[fave]);
                 return <Favorite 
+                          clicked={this.favClickHandler}
                           key={index} 
                           data={favorites[fave]}
                           user={this.props.user} />

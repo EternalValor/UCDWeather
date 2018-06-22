@@ -83,7 +83,7 @@
 }
 
 .List li {
-  display: block;
+  display: block !important;
   margin: 40px 0;
 }
 
@@ -95,4 +95,35 @@
   position: relative;
   top: -5px;
   left: 26px;
+}
+
+.Username {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25rem;
+  position: relative;
+  left: 19%;
+  color: #707070;
+  top: 15px;
+}
+
+.Username span {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  margin-right: 33px;
+}
+
+@media ( max-width: 600px ) {
+  .SideDrawer {
+    width: 80%;
+  }
+
+  .Title {
+    left: 45%;
+  }
+
+  .TitleLine {
+    width: 70%;
+  }
 }

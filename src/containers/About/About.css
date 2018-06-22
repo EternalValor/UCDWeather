@@ -2,6 +2,21 @@
   width: 100%;
   height: calc(100% - 75px);
   background: white;
+  overflow: scroll;
+}
+
+.About::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+.About::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+.About::-webkit-scrollbar-thumb {
+background-color: #707070;
+outline: 1px solid slategrey;
 }
 
 .Title {
@@ -29,4 +44,14 @@
   font-weight: 600;
   line-height: 2.2rem;
   color: #707070;
+}
+
+
+@media ( max-width: 750px ) {
+  
+.Content { 
+  width: 75%;
+  height: auto;
+  margin-bottom: 70px;
+}
 }
