@@ -12,27 +12,27 @@ const mainWeather = (props) => {
         <div className={classes.LeftFlex} >
           <div className={classes.MainTemp}>{`${props.temp}°`}</div>
           <div className={classes.HighLow}>
-            <div className={classes.LowTemp}><Triangle rotate='180'/> {`${props.low}°`}</div>
-            <div className={classes.HighTemp}><Triangle /> {`${props.high}°`}</div>
+            <div className={classes.LowTemp}><Triangle rotate='180' /> {`${props.low}°C`}</div>
+            <div className={classes.HighTemp}><Triangle /> {`${props.high}°C`}</div>
           </div>
         </div>
         <div className={classes.RightFlex}>
           <div className={classes.Details} >Details</div>
           <div className={classes.MainDetails}>
             <div>
-                <span className={classes.MainDetailsLeft}>FEELS LIKE</span> 
-                <span className={classes.MainDetailsRight}>{`${props.feels}°`}</span>
+              <span className={classes.MainDetailsLeft}>FEELS LIKE</span>
+              <span className={classes.MainDetailsRight}>{`${props.feels}°C`}</span>
             </div>
             <div>
-                <span className={classes.MainDetailsLeft}>PRECIPITATION</span> 
-                <span className={classes.MainDetailsRight}>{`${props.precip}%`}</span>
-              </div>
+              <span className={classes.MainDetailsLeft}>PRECIPITATION</span>
+              <span className={classes.MainDetailsRight}>{`${props.precip}%`}</span>
+            </div>
             <div>
-              <span className={classes.MainDetailsLeft}>WIND</span> 
+              <span className={classes.MainDetailsLeft}>WIND</span>
               <span className={classes.MainDetailsRight}>{`${props.wind} km/h`}</span>
             </div>
             <div>
-              <span className={classes.MainDetailsLeft}>VISIBILITY</span> 
+              <span className={classes.MainDetailsLeft}>VISIBILITY</span>
               <span className={classes.MainDetailsRight}>{`${props.visibility} km`}</span>
             </div>
           </div>

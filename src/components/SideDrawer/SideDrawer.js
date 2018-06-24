@@ -30,10 +30,10 @@ const sideDrawer = (props) => {
         <hr className={classes.TitleLine} />
         <div className={classes.Username} >{props.user ?
           props.user.email ?
-          (<Auxx>
-            <span style={{ background: '#2cff2c' }}></span>
-            {props.user.email.substr(0, props.user.email.indexOf('@'))}
-          </Auxx>) : null 
+            (<Auxx>
+              <span style={{ background: '#2cff2c' }}></span>
+              {props.user.email.substr(0, props.user.email.indexOf('@'))}
+            </Auxx>) : null
           :
           (<Auxx>
             <span style={{ background: '#ff3333' }}></span> Offline

@@ -15,57 +15,51 @@ class CenterPage extends Component {
   }
 
   sideDrawerClosedHandler = () => {
-    this.setState({showSideDrawer: false});
+    this.setState({ showSideDrawer: false });
   }
 
   drawerToggleHandler = () => {
     this.setState((prevState) => {
-      return {showSideDrawer: !prevState.showSideDrawer};
+      return { showSideDrawer: !prevState.showSideDrawer };
     });
   }
 
   loginModalClosedHandler = () => {
-    this.setState({showLoginModal: false});
+    this.setState({ showLoginModal: false });
   }
 
   loginModalToggleHandler = () => {
     this.setState((prevState) => {
-      return {showLoginModal: !prevState.showLoginModal};
-    }) 
+      return { showLoginModal: !prevState.showLoginModal };
+    })
   }
 
-  
+
 
 
   inputChangedHandler = (event) => {
     let updatedInput = this.state.name;
     updatedInput = event.target.value;
-    if(event.charCode === 13) {
-      this.setState({name: updatedInput});
+    if (event.charCode === 13) {
+      this.setState({ name: updatedInput });
       event.target.value = '';
       this.props.history.push('/results');
     }
   }
 
   onGeoLocationUpdateHandler = (data) => {
-    this.setState({geoData: data});
+    this.setState({ geoData: data });
   }
 
   componentWillUpdate(nextProps, nextState) {
-    if(nextState.geoData !== this.state.geoData){
+    if (nextState.geoData !== this.state.geoData) {
       this.props.updateGeo(nextState.geoData);
     }
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   this.props.updateSearch(nextState.name);
-  //   return true;
-  // }
-
-
   render() {
     return (
-        <div className={classes.CenterPage}> 
+      <div className={classes.CenterPage}>
         <div style={{
           width: '100%',
           height: '100%',
@@ -74,30 +68,30 @@ class CenterPage extends Component {
           zIndex: '-1',
           display: this.props.shouldDisplay
         }} ></div>
-        <Toolbar 
-          drawerToggleClicked={this.drawerToggleHandler} 
+        <Toolbar
+          drawerToggleClicked={this.drawerToggleHandler}
           loginToggleClicked={this.loginModalToggleHandler}
-          updateName={this.updateNameHandler} 
+          updateName={this.updateNameHandler}
           changed={this.onGeoLocationUpdateHandler}
           history={this.props.history}
           color={this.props.buttonColor}
           user={this.props.user} />
 
-          <SideDrawer 
-            loginToggleClicked={this.loginModalToggleHandler}
-            loginModalClosed={this.loginModalClosedHandler}
-            closed={this.sideDrawerClosedHandler}
-            open={this.state.showSideDrawer}
-            user={this.props.user} />
+        <SideDrawer
+          loginToggleClicked={this.loginModalToggleHandler}
+          loginModalClosed={this.loginModalClosedHandler}
+          closed={this.sideDrawerClosedHandler}
+          open={this.state.showSideDrawer}
+          user={this.props.user} />
 
-          <LoginModal
-            user={this.props.user}
-            closed={this.loginModalClosedHandler}
-            open={this.state.showLoginModal} />
-          <Auxx>
-            {this.props.children} 
-          </Auxx>
-        </div>
+        <LoginModal
+          user={this.props.user}
+          closed={this.loginModalClosedHandler}
+          open={this.state.showLoginModal} />
+        <Auxx>
+          {this.props.children}
+        </Auxx>
+      </div>
     )
   }
 

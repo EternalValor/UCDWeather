@@ -45,7 +45,7 @@ class Results extends Component {
       } else if (favIcon.getAttribute('fill') === 'white' && nextState.faved) {
         this.setState({ faved: false });
       }
-      
+
     }
   }
 
@@ -62,7 +62,7 @@ class Results extends Component {
           } else if (favIcon.getAttribute('fill') === 'white') {
             this.setState({ faved: false });
           }
-          
+
         }
       }
     }
@@ -70,8 +70,8 @@ class Results extends Component {
 
 
   addFavHandler = () => {
-    if(this.state.faved){
-      
+    if (this.state.faved) {
+
       this.state.database.ref(`users/${this.props.user.uid}/favorites/${this.props.geoData.city}${this.props.geoData.country}${this.props.geoData.location.lat.toFixed()}${this.props.geoData.location.lng.toFixed()}`).remove();
       this.setState((prevState) => {
         return { faved: !prevState.faved }
@@ -89,7 +89,7 @@ class Results extends Component {
         temp: this.state.weatherData.currently.temperature.toFixed(),
         icon: this.state.weatherData.currently.icon,
         summary: this.state.weatherData.currently.summary,
-        humidity: (this.state.weatherData.currently.humidity * 100 ).toFixed(),
+        humidity: (this.state.weatherData.currently.humidity * 100).toFixed(),
         wind: this.state.weatherData.currently.windSpeed.toFixed(),
         time: this.state.weatherData.currently.time
       }
@@ -104,20 +104,20 @@ class Results extends Component {
 
   render() {
 
-    
+
     let favorites = this.state.favorites;
-    
+
 
     if (this.props.user) {
       if (this.props.user.uid) {
         this.state.database.ref('users/' + this.props.user.uid + '/favorites').on('value', snap => {
           favorites = snap.val();
-          
+
         });
       }
     }
 
-    
+
     let renderBoi;
 
     if (this.props.loading) renderBoi = <div className={classes.MainContainer} style={{ padding: '15px' }} ><Spinner /></div>
@@ -126,10 +126,10 @@ class Results extends Component {
     let dailyCount = 5;
 
     if (window.innerWidth < 1440) {
-      
+
       hourlyCount = Math.ceil((0.84 * window.innerWidth) / 112);
       dailyCount = ((0.84 * window.innerWidth) / 251).toFixed();
-      
+
     }
 
     if (this.state.weatherData) {
@@ -141,7 +141,7 @@ class Results extends Component {
             {
               this.props.user ?
                 (
-                  favorites ? 
+                  favorites ?
                     <span className={classes.Favorite} onClick={this.addFavHandler}>
                       <Icon
                         name="heart"

@@ -13,16 +13,16 @@ class Example extends Component {
   onGeoDestinationChange = value => this.setState({ geoDestination: value })
 
   componentWillUpdate(nextProps, nextState) {
-    if(nextState.geoDestination !== this.state.geoDestination){
+    if (nextState.geoDestination !== this.state.geoDestination) {
       this.props.changed(nextState.geoDestination);
       this.props.history.push('/results');
     }
   }
 
   render() {
-    
+
     const inp = document.getElementsByClassName('react-geoinput___GeoAddressInput__predictiveInput react-geoinput___PredictiveInput__input');
-    if(inp[0]) inp[0].setAttribute("placeholder", "Search");
+    if (inp[0]) inp[0].setAttribute("placeholder", "Search");
     return (
 
       <div>
@@ -43,5 +43,5 @@ class Example extends Component {
     );
   }
 }
- 
+
 export default Example;

@@ -25,7 +25,7 @@ class LoginModal extends Component {
     }).catch(error => {
       this.setState({ error: true });
       this.setState({ errorMessage: error.message });
-      
+
     }).then(() => {
       if (!this.state.error) {
         this.setState({ errorMessage: null });
@@ -34,7 +34,7 @@ class LoginModal extends Component {
         this.setState({ error: false });
       }
     });
-    this.setState({email: '', password: ''});
+    this.setState({ email: '', password: '' });
   }
 
   signup = (e) => {
@@ -43,7 +43,7 @@ class LoginModal extends Component {
       .catch(error => {
         this.setState({ error: true });
         this.setState({ errorMessage: error.message });
-        
+
       }).then(() => {
         if (!this.state.error) {
           this.setState({ errorMessage: null });
@@ -52,7 +52,7 @@ class LoginModal extends Component {
           this.setState({ error: false });
         }
       });
-      this.setState({email: '', password: ''});
+    this.setState({ email: '', password: '' });
   }
 
 

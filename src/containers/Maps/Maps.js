@@ -84,7 +84,7 @@ class Maps extends Component {
           if (results[0]) {
             for (let i = 0; i < results[1].address_components.length; i++) {
               if (!parseInt(results[1].address_components[i].long_name, 10)) {
-                
+
                 city = results[1].address_components[i].long_name;
                 newGeo.city = city;
                 break;
@@ -92,7 +92,7 @@ class Maps extends Component {
             }
             for (let i = results[1].address_components.length - 1; i >= 0; i--) {
               if (!parseInt(results[1].address_components[i].long_name, 10)) {
-                
+
                 country = results[1].address_components[i].long_name;
                 newGeo.country = country;
                 that.changeGeoStateHandler(newGeo);

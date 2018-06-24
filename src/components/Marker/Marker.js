@@ -9,7 +9,7 @@ const marker = (props) => {
   return (
     <NavLink
       to="/results"
-      style={{color: 'black', textDecoration: 'none'}}
+      style={{ color: 'black', textDecoration: 'none' }}
       exact >
       <div className={classes.Marker}>
         <div className={classes.Title}>{props.title}</div>

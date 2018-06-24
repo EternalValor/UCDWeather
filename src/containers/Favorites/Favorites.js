@@ -18,7 +18,7 @@ class Favorites extends React.Component {
   componentDidMount() {
     this.props.updatePage(this.props.location.pathname, this.props);
     this.state.database.ref('users/' + this.props.user.uid + '/favorites').on('value', snap => {
-      this.setState({favorites: snap.val()});
+      this.setState({ favorites: snap.val() });
     });
   }
 
@@ -28,7 +28,7 @@ class Favorites extends React.Component {
   }
 
 
- 
+
 
   render() {
 
@@ -46,32 +46,32 @@ class Favorites extends React.Component {
 
 
     return (
-      <div className={classes.Favorites}> 
+      <div className={classes.Favorites}>
         <div className={classes.Title}>Your Favorite Weather</div>
         <hr className={classes.Line} />
         <div className={classes.Favs} >
 
-        { favorites ? 
-          <Auxx> 
-            {
-              Object.keys(favorites).map((fave, index) => {
-                return <Favorite 
-                          clicked={this.favClickHandler}
-                          key={index} 
-                          data={favorites[fave]}
-                          user={this.props.user} />
-              })
-            }  
-          </Auxx> : 
-          <Auxx>
-            <Spinner />
-            <div style={{
-              position: 'absolute',
-              bottom: '15%'
-            }}>
-              If this operation is taking too long, try adding some favorites.
+          {favorites ?
+            <Auxx>
+              {
+                Object.keys(favorites).map((fave, index) => {
+                  return <Favorite
+                    clicked={this.favClickHandler}
+                    key={index}
+                    data={favorites[fave]}
+                    user={this.props.user} />
+                })
+              }
+            </Auxx> :
+            <Auxx>
+              <Spinner />
+              <div style={{
+                position: 'absolute',
+                bottom: '15%'
+              }}>
+                If this operation is taking too long, try adding some favorites.
             </div>
-          </Auxx>}
+            </Auxx>}
         </div>
       </div>
     )
