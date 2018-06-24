@@ -10,7 +10,7 @@ const mainWeather = (props) => {
       <h1 className={classes.Title}>{props.title.toUpperCase()}</h1>
       <div className={classes.MainFlex} >
         <div className={classes.LeftFlex} >
-          <div className={classes.MainTemp}>{`${props.temp}°`}</div>
+          <div className={classes.MainTemp}>{`${props.temp}°`}<span style={{fontWeight: '300', fontSize: '4rem'}}>C</span></div>
           <div className={classes.HighLow}>
             <div className={classes.LowTemp}><Triangle rotate='180' /> {`${props.low}°C`}</div>
             <div className={classes.HighTemp}><Triangle /> {`${props.high}°C`}</div>
